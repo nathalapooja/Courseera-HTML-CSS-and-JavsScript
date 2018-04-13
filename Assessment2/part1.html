@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Guessing Game</title>
+</head>
+<body onload="do_game()">
+<script >
+var target;
+var guess_input_text;
+var guess_input;
+var finished = false;
+var guesses = 0;
+var UnsortinputArray=["magenta", "white", "cyan", "gray", "blue", "green", "orange", "red", "gold", "yellow"];
+var inputArray=UnsortinputArray.sort();
+var str=inputArray[0];
+function do_game(){
+var random_number = Math.random() * 10;
+var random_number_integer = Math.floor(random_number);
+target=inputArray[random_number_integer];
+for(j=1;j<10;j++){
+	str=str+", "+inputArray[j];
+}
+	
+while (!finished) {
+guess_input_text = prompt("I am thinking of one of these colors: \n\n "+str+
+"\n\n"+
+"What color am I thinking of? ");
+guess_input = guess_input_text;
+guesses += 1;
+if(guess_input==target){
+	finished=true;
+}
+}
+}
+
+</script>
+
+</body>
+</html>
